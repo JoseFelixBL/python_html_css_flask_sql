@@ -2,53 +2,39 @@ body {
     background-color: #eee;
 }
 
-.box-red {
-    border-style: hidden hidden hidden solid;
-    border-left-color: red;
-    border-left-width: 2px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+
+.box {
     background-color: white;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 10px 15px;
     width: 100px;
-    margin: 6px;
-    padding: 6px;
+    padding: 10px 15px;
     text-align: center;
+}
+
+.red {
+    border-left: solid 2px red;
     transition: 0.3s;
 }
 
-.box-green {
-    border-style: hidden hidden hidden solid;
-    border-left-color: green;
-    border-left-width: 2px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
-    background-color: white;
-    width: 100px;
-    margin: 6px;
-    padding: 6px;
-    text-align: center;
-    transition: box-shadow 0.3s;
-}
-
-.box-blue {
-    border-style: hidden hidden hidden solid;
-    border-left-color: blue;
-    border-left-width: 2px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
-    background-color: white;
-    width: 100px;
-    margin: 6px;
-    padding: 6px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.box-red:hover {
+.red:hover {
     transform: scale(1.05);
 }
 
-.box-green:hover {
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .1);
+.green {
+    border-left: solid 2px green;
+    transition: box-shadow 0.3s;
 }
 
-.box-blue:hover {
+.green:hover {
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, .2);
+}
+
+.blue {
+    border-left: solid 2px blue;
+    transition: 0.3s;
+}
+
+.blue:hover {
     background-color: grey;
 }
