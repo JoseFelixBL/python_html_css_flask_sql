@@ -1,0 +1,35 @@
+body {
+    background-color: #eee;
+}
+
+a {
+    /* para estilo genérico */
+    color: green;
+    background-color: #f00;
+    border: solid 1px #d00;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 4px;
+}
+
+a:link {
+    /* cuando aún no ha sido visitado */
+    color: hotpink;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    /* cuando pasamos por encima */
+    color: white;
+    text-decoration: underline;
+    background-color: #f55;
+}
+
+a:active {
+    /* cuando mantenemos el click en el enlace */
+    color: black;
+}
