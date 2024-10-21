@@ -1,0 +1,15 @@
+body {
+    background-color: #eee;
+}
+
+.fondo {
+    /*
+    background-image: linear-gradient(red, yellow);
+    background-image: linear-gradient(to right, white, #ccc);
+    background-image: linear-gradient(to bottom right, red, blue);
+    background-image: linear-gradient(135deg, red, yellow);
+    background-image: linear-gradient(0deg, red, blue, yellow);
+    background-image: linear-gradient(0deg, rgba(255, 0, 0, 0.2), tomato);
+    */
+    background-image: repeating-linear-gradient(0deg, rgba(0, 0, 255, 0.2) 25%, tomato 50%);
+}

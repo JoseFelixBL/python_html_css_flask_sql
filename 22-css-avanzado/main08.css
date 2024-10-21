@@ -1,0 +1,54 @@
+body {
+    background-color: #eee;
+}
+
+.box-red {
+    border-style: hidden hidden hidden solid;
+    border-left-color: red;
+    border-left-width: 2px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    background-color: white;
+    width: 100px;
+    margin: 6px;
+    padding: 6px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.box-green {
+    border-style: hidden hidden hidden solid;
+    border-left-color: green;
+    border-left-width: 2px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    background-color: white;
+    width: 100px;
+    margin: 6px;
+    padding: 6px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.box-blue {
+    border-style: hidden hidden hidden solid;
+    border-left-color: blue;
+    border-left-width: 2px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    background-color: white;
+    width: 100px;
+    margin: 6px;
+    padding: 6px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.box-red:hover {
+    transform: scale(1.05);
+}
+
+.box-green:hover {
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .1);
+}
+
+.box-blue:hover {
+    background-color: grey;
+}
