@@ -1,0 +1,55 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #eee;
+    margin: 0px;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 5px;
+
+    /* Horizontales */
+    /* A la izquierda */
+    justify-content: start;
+    /* A la derecha */
+    justify-content: end;
+    /* Al centro */
+    justify-content: center;
+    /* como el justify de los párrafos, 
+    con el mismo espacio a cada lado de cada elemento */
+    justify-content: space-around;
+    /* con el mismo espacio entre elementos */
+    /* pero sin espacio al comienzo ni al final */
+    justify-content: space-between;
+    /* Espaciado uniforme entre elementos */
+    justify-content: space-evenly;
+    /* A la Izquierda */
+    justify-content: start;
+
+    /* Verticales */
+    /* arriba */
+    align-content: start;
+    /* abajo */
+    align-content: end;
+    /* centro */
+    align-content: center;
+    /* space-arround */
+    align-content: space-around;
+    /* space-between */
+    align-content: space-between;
+    /* space-evenly */
+    align-content: space-evenly;
+}
+
+
+.red {
+    background-color: red;
+}
