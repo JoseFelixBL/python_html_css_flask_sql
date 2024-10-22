@@ -1,0 +1,21 @@
+body {
+    background-color: #eee;
+}
+
+/* puedo volver los párrafos INLINE
+p {
+	display: inline;
+}
+*/
+
+/* puedo volver los span a BLOCK
+span {
+	display: block;
+}
+*/
+
+/* puedo volver cualquier cosa invisible
+#invisible {
+	display: none;
+}
+*/
