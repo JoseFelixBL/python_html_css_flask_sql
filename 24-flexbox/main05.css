@@ -1,0 +1,19 @@
+body {
+    width: 200px;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    height: 200px;
+    align-content: flex-start;
+    align-content: end;
+    align-content: center;
+    align-content: stretch;
+}
+
+.red {
+    background-color: red;
+}

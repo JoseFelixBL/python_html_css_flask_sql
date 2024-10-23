@@ -1,0 +1,20 @@
+body {
+    width: 200px;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: flex-end;
+    justify-content: center;
+    /* Y así igual que en grid */
+
+    align-items: flex-end;
+    align-items: center;
+    align-items: stretch;
+}
+
+.red {
+    background-color: red;
+}

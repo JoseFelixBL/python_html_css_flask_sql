@@ -1,0 +1,17 @@
+body {
+    width: 200px;
+}
+
+.flex {
+    display: flex;
+    /* Para que empiece por la izq.-row, der-row-reverse
+    arriba columnas-column, columnas desde abajo-column-reverse */
+    /* flex-direction: column-reverse; */
+
+    /* Cómo hacer para que el contenido sobrante 
+    salte a la siguiente fila */
+    /* flex-wrap: wrap-reverse; */
+
+    /* Unir las 2 propiedades anteriores */
+    flex-flow: row wrap;
+}
