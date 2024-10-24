@@ -7,9 +7,9 @@ def index():
     return 'hola mundo'
 
 
-@app.route('/lala')
-def lala():
-    return 'lala'
+@app.route('/post/<post_id>')
+def lala(post_id):
+    return 'El id del post es: ' + post_id
 
 
 @app.route('/lele')
