@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for, redirect
+from flask import Flask, request, url_for, redirect, abort
 app = Flask(__name__)
 
 
@@ -24,6 +24,7 @@ def lele():
     # print(url_for('index'))
     # Si la función tiene argumentos le pasamos sus valores como argumentos nombrados
     # SIEMPRE ponemos return al redirect para poder ir allá
+    abort(401)
     return redirect(url_for('lala', post_id=2))
     # print(request.form)
     # print(request.form['llave1'])
