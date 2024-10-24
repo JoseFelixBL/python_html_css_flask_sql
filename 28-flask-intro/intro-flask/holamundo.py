@@ -34,3 +34,13 @@ def lele():
         "username": "Chanchito Feliz",
         "email": "chanchito@feliz.com"
     }
+
+
+@app.route('/home_simple', methods=['GET'])
+def home_simple():
+    return render_template('home_simple.html', mensaje='Hola Mundo!')
+
+
+@app.route('/home', methods=['GET'])
+def home():
+    return render_template('home.html', mensaje='Hola Mundo!')
