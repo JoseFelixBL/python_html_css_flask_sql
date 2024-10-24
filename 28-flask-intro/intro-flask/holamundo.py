@@ -1,5 +1,16 @@
+import mariadb
 from flask import Flask, request, url_for, redirect, abort, render_template
 app = Flask(__name__)
+
+
+midb = mariadb.connect(
+    host='localhost',
+    user='root',  # Mejor no usar el usuario root
+    password='...',  # Recordar poner el password...
+    database='prueba'
+)
+
+cursor = midb.cursor(dictionary=True)
 
 
 @app.route('/')
@@ -20,6 +31,9 @@ def lala(post_id):
 
 @app.route('/lele', methods=['POST', 'GET'])
 def lele():
+    cursor.execute('select * from usuario')
+    usuarios = cursor.fetchall()
+    print(usuarios)
     # Llamamos a la función url_for con en nombre de la función a la que vamos
     # print(url_for('index'))
     # Si la función tiene argumentos le pasamos sus valores como argumentos nombrados
@@ -30,10 +44,7 @@ def lele():
     # print(request.form['llave1'])
     # print(request.form['llave2'])
     # return render_template('lele.html')
-    return {
-        "username": "Chanchito Feliz",
-        "email": "chanchito@feliz.com"
-    }
+    return render_template('lele.html', usuarios=usuarios)
 
 
 @app.route('/home_simple', methods=['GET'])
@@ -44,3 +55,17 @@ def home_simple():
 @app.route('/home', methods=['GET'])
 def home():
     return render_template('home.html', mensaje='Hola Mundo!')
+
+
+@app.route('/crear', methods=['GET', 'POST'])
+def crear():
+    if request.method == "POST":
+        username = request.form['username']
+        email = request.form['email']
+        edad = request.form['edad']
+        sql = "insert into usuario (username, email, edad) values (%s, %s, %s)"
+        values = (username, email, edad)
+        cursor.execute(sql, values)
+        midb.commit()
+        return redirect(url_for('lele'))
+    return render_template('crear.html')
