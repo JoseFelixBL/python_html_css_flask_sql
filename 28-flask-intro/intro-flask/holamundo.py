@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, url_for
 app = Flask(__name__)
 
 
@@ -20,6 +20,10 @@ def lala(post_id):
 
 @app.route('/lele', methods=['POST'])
 def lele():
+    # Llamamos a la función url_for con en nombre de la función a la que vamos
+    print(url_for('index'))
+    # Si la función tiene argumentos le pasamos sus valores como argumentos nombrados
+    print(url_for('lala', post_id=2))
     print(request.form)
     print(request.form['llave1'])
     print(request.form['llave2'])
