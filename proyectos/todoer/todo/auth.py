@@ -52,3 +52,18 @@ def login():
         c.execute(
             'select * from user where username = %s', (username,)
         )
+        user = c.fetchone()
+
+        if user is None:
+            error = 'Usuario y/o contraseña inválida.'
+        elif not check_password_hash(user['password'], password):
+            error = 'Usuario y/o contraseña inválida.'
+
+        if error is None:
+            session.clear()
+            session['user_id'] = user['id']
+            return redirect(url_for('index'))
+
+        flash(error)
+
+    return render_template('auth/login.html')
