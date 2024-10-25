@@ -30,7 +30,7 @@ def register():
             # error = 'Usuario {} se encuentra registrado.'.format(username)
         if error is None:
             c.execute(
-                'insert into user (username, password) values (%s, %s)'
+                'insert into user (username, password) values (%s, %s)',
                 (username, generate_password_hash(password))
             )
             db.commit()
