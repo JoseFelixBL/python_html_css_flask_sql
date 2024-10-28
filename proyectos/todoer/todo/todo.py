@@ -49,7 +49,11 @@ def create():
 @bp.route('/<int:id>/update', methods=['GET', 'POST'])
 @login_required
 def update(id):
-    return render_template('todo/update.html', todo=todo)
+    return render_template('todo/update.html', todo={
+        "description": "kk Mi todo",
+        "id": 2,
+        "completed": 0
+    })
 
 
 @bp.route('/<int:id>/delete', methods=['POST'])
