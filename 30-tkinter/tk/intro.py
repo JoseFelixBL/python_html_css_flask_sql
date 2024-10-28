@@ -4,9 +4,12 @@ root = Tk()  # Crear el objeto Tk
 root.title('Hola mundo')  # Nombre de la ventana
 root.geometry('400x400')  # ancho x alto
 
-label = Label(root, text='Hola mundo! mi primera etiqueta')
-Label(root, text='Hola mundo! mi SEGUNDA etiqueta').pack()
+l1 = Label(root, text='Hola mundo! primera etiqueta')
+l2 = Label(root, text='Chao mundo! segunda etiqueta')
+l3 = Label(root, text='                ')
 
-label.pack()
+l1.grid(row=0, column=0)
+l3.grid(row=1, column=1)
+l2.grid(row=10, column=10)
 
 root.mainloop()  # Ejecutar la ventana, escucha a la espera de cambios
