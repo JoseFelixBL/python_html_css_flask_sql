@@ -11,23 +11,20 @@ e.insert(0, "Ingresa texto:")
 
 def click():
     texto = e.get()
-    l.configure(text=texto)
-
-
-def click2():
-    texto = e.get()
-    l2 = Label(root, text=texto)
-    l2.pack()
+    textvariable.set(texto)
+    valor = textvariable.get()
+    print(valor)
+    # l = Label(root, text=texto)
+    # l.pack()
     e.delete(0, END)
+    # l.configure(text=texto)
 
 
 btn = Button(root, text='Click', command=click)
 btn.pack()
 
-btn2 = Button(root, text='Click2', command=click2)
-btn2.pack()
-
-l = Label(root, text='Texto de la etiqueta')
+textvariable = StringVar()
+l = Label(root, textvariable=textvariable)
 l.pack()
 
 
