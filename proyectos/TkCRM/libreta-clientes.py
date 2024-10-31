@@ -20,11 +20,18 @@ c.execute("""
 """)
 
 
+def render_clientes():
+    rows = c.execute('SELECT * FROM cliente').fetchall()
+    for row in rows:
+        tree.insert('', END, row[0], values=(row[1], row[2], row[3]))
+
+
 def insertar(cliente):
     c.execute("""
               INSERT INTO cliente (nombre, telefono, empresa) VALUES (?, ?, ?)
               """, (cliente['nombre'], cliente['telefono'], cliente['empresa']))
     conn.commit()
+    render_clientes()
 
 
 def nuevo_cliente():
@@ -93,5 +100,7 @@ tree.heading('Nombre', text='Nombre')
 tree.heading('Telefono', text='Teléfono')
 tree.heading('Empresa', text='Empresa')
 tree.grid(row=1, column=0, columnspan=2)
+
+render_clientes()
 
 root.mainloop()
