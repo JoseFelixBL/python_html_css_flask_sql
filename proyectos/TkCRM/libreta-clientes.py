@@ -20,8 +20,53 @@ c.execute("""
 """)
 
 
+def insertar(cliente):
+    print(cliente)
+
+
 def nuevo_cliente():
-    pass
+    def guardar():
+        if not enombre.get():
+            messagebox.showerror('Error', 'El nombre es obligatorio')
+            return
+        if not etelefono.get():
+            messagebox.showerror('Error', 'El teléfono es obligatorio')
+            return
+        if not eempresa.get():
+            messagebox.showerror(
+                'Error', 'El nombre de empresa es obligatorio')
+            return
+
+        cliente = {
+            'nombre': enombre.get(),
+            'telefono': etelefono.get(),
+            'empresa': eempresa.get()
+        }
+        insertar(cliente)
+        top.destroy()
+
+    top = Toplevel()
+    top.title('Nuevo cliente')
+
+    lnombre = Label(top, text='Nombre')
+    enombre = Entry(top, width=40)
+    lnombre.grid(row=0, column=0)
+    enombre.grid(row=0, column=1)
+
+    ltelefono = Label(top, text='Teléfono')
+    etelefono = Entry(top, width=40)
+    ltelefono.grid(row=1, column=0)
+    etelefono.grid(row=1, column=1)
+
+    lempresa = Label(top, text='Empresa')
+    eempresa = Entry(top, width=40)
+    lempresa.grid(row=2, column=0)
+    eempresa.grid(row=2, column=1)
+
+    guardar = Button(top, text='Guardar', command=guardar)
+    guardar.grid(row=3, column=1)
+
+    # top.mainloop()
 
 
 def eliminar_cliente():
