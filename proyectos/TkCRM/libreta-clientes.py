@@ -14,14 +14,17 @@ c.execute("""
           CREATE TABLE IF NOT EXISTS cliente (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nombre TEXT NOT NULL,
-            TELEFONO TEXT NOT NULL,
-            EMPRESA TEXT NOT NULL
+            telefono TEXT NOT NULL,
+            empresa TEXT NOT NULL
           );
 """)
 
 
 def insertar(cliente):
-    print(cliente)
+    c.execute("""
+              INSERT INTO cliente (nombre, telefono, empresa) VALUES (?, ?, ?)
+              """, (cliente['nombre'], cliente['telefono'], cliente['empresa']))
+    conn.commit()
 
 
 def nuevo_cliente():
