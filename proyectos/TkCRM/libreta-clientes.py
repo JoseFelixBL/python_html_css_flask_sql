@@ -22,6 +22,8 @@ c.execute("""
 
 def render_clientes():
     rows = c.execute('SELECT * FROM cliente').fetchall()
+
+    tree.delete(*tree.get_children())
     for row in rows:
         tree.insert('', END, row[0], values=(row[1], row[2], row[3]))
 
@@ -80,7 +82,19 @@ def nuevo_cliente():
 
 
 def eliminar_cliente():
-    pass
+    id = tree.selection()[0]
+
+    cliente = c.execute(
+        'SELECT * FROM cliente WHERE id = ?', (id, )).fetchone()
+
+    respuesta = messagebox.askokcancel(
+        '¿Seguro?', f'¿Estás seguro de querer eliminar el cliente {cliente[1]}?')
+    if respuesta:
+        c.execute('DELETE FROM cliente WHERE id = ?', (id,))
+        conn.commit()
+        render_clientes()
+    else:
+        pass
 
 
 btn = Button(root, text='Nuevo Cliente', command=nuevo_cliente)
